@@ -131,7 +131,7 @@ RiakClient.prototype.retry_filter = function retry_filter(options, response, bod
 RiakClient.prototype.headers = function (new_headers) {
     var out_obj = {
         "X-Riak-ClientId": this.client_id,
-        "Connection": "keep-alive"
+        //"Connection": "keep-alive"
     }, i, keys;
 
     if (new_headers) {
