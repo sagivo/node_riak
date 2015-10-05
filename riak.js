@@ -579,7 +579,7 @@ RiakClient.prototype.post = function (url, post_body, callback) {
         path: url,
         headers: {
             "X-Riak-ClientId": this.client_id,
-            "Connection": "keep-alive",
+            //"Connection": "keep-alive",
             "Content-Type": "application/json"
         }
     }, post_body, function (err, res, body) {
@@ -623,8 +623,8 @@ RiakClient.prototype.solr = function (bucket, query, limit, callback) {
     this.pool.get({
         path: "/solr/" + encodeURIComponent(bucket) +  "/select?q=" + encodeURIComponent(query) + "&wt=json&rows=" + limit,
         headers: {
-            "X-Riak-ClientId": this.client_id,
-            "Connection": "keep-alive"
+            "X-Riak-ClientId": this.client_id
+            //"Connection": "keep-alive"
         }
     }, function (err, res, body) {
         if (err) {
